@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>submit-data-drive</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="main">
+<div class="form"> <form  method="post" id="mydrive"> 
+    <h4>send data to google sheet</h4>
+        <input type="email" placeholder="Enter Enail" name="email">
+     <input type="text"  placeholder="Enter Usename" name="User_name">
+     <button type="submit" id="btnsmt"> submit</button>
+ </form>
+</div>
+
+    </div>
+    <script>
+jQuery('#mydrive').on("submit"  ,function(e){
+    e.preventDefault();
+jQuery.ajax({
+url:"https://script.google.com/macros/s/AKfycbzm_5BoKVznphvVn0zkOVYmo9GNlu6y9DnuIGLkN5gRFz-EuuJCufgPvrvRAsnqvul9WA/exec",
+type:"post",
+data:jQuery("#mydrive").serialize(),
+sucess:function(result){
+    console.log(result);
+}
+});
+});
+    </script>
+</body>
+</html>
+
+
+<style>
+
+
+:root{
+
+--fav-clr:rgba(43,43,43);
+--fav-bg:rgba(92,22,44);
+
+}
+.main{
+display:block;
+height: 300px;
+width: 400px;
+margin: auto;
+margin-top: 5%;
+/* background: var(--fav-bg); */
+padding: 5px;
+border: 2px outset;
+}
+form{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+gap: 5px;
+padding: 5px;
+}
+input, button{
+border: 1px outset;
+
+}
+
+
+</style>
