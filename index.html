@@ -12,18 +12,20 @@
     <div class="main">
 <div class="form"> <form  method="post" id="mydrive"> 
     <h4>send data to google sheet</h4>
-        <input type="email" placeholder="Enter Enail" name="email">
+        <input type="email" placeholder="Enter Email" name="email">
      <input type="text"  placeholder="Enter Usename" name="User_name">
+     <input type="mobile" placeholder="Enter Mobile" name="mobile">
      <button type="submit" id="btnsmt"> submit</button>
  </form>
+ <a href="access sheetdata.php"> chack my data</a>
 </div>
 
     </div>
     <script>
-jQuery('#mydrive').on("submit"  ,function(e){
+jQuery('#mydrive').on("submit",function(e){
     e.preventDefault();
 jQuery.ajax({
-url:"paste your deploy url hare",
+url:"https://script.google.com/macros/s/AKfycbzm_5BoKVznphvVn0zkOVYmo9GNlu6y9DnuIGLkN5gRFz-EuuJCufgPvrvRAsnqvul9WA/exec",
 type:"post",
 data:jQuery("#mydrive").serialize(),
 sucess:function(result){
@@ -39,13 +41,19 @@ sucess:function(result){
 <style>
 
 
+:root{
 
+--fav-clr:rgba(43,43,43);
+--fav-bg:rgba(92,22,44);
+
+}
 .main{
 display:block;
 height: 300px;
 width: 400px;
 margin: auto;
 margin-top: 5%;
+/* background: var(--fav-bg); */
 padding: 5px;
 border: 2px outset;
 }
